@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+ <meta charset="UTF-8">
+<title>JavaScript</title>
+  <link rel="stylesheet" type="text/css" href="tp6.css">
+</head>
+<body>
+
+
+
+
+
+<h1>Algorithme d'Euclide</h1>
+
+<form name="oreille">
+Entrer un nombre entier      
+<input name="ent1" value="152344704" type="text"><br>
+Entrer un autre nombre entier 
+<input name="ent2" value=" 700983168" type="text"><br>
+             
+<input name="calcul" value="Calculer le pgcd" onclick="maj(oreille)" type="button"><br>
+Le plus grand nombre qui divise à la fois ces deux entiers est 
+<input name="sortie" value="" type="button"><br>
+</form>
+
+
+<script>
+
+document.write("<center>");
+document.write("<caption> Table de multiplication</caption>");
+document.write("<table border=1>");
+
+for(var i=1;i<=12;i++) {
+	document.write("<tr>");
+	for(var j=1;j<=12;j++){
+		var no=i*j;
+		if((no%2==0)&&(no%3==0)){
+		console.log(no);
+		document.write("<td class='totale'>",i*j,"</td>");
+		}		
+		else if(no%2==0){
+		console.log(no);
+		document.write("<td class='pair'>",i*j,"</td>");
+		}
+		else if(no%3==0){
+		console.log(no);
+		document.write("<td class='trois'>",i*j,"</td>");
+		} 
+		else{	
+		document.write("<td>",i*j,"</td>");
+		}
+	}
+	document.write("</tr>");
+}
+document.write("</table>");
+
+function pgcd(x,y){
+	var m = x; 
+	var n = y; 
+	var t = m; 
+	while (n > 0){
+		t = m % n; // 10 % 15
+		m = n; // m = 15
+		n = t; // n = 10
+	}
+	return(m);
+}
+
+
+function maj(oreille){ 
+	a=document.oreille.ent1.value;
+	b=document.oreille.ent2.value; 
+	document.c=pgcd(a,b);
+	document.oreille.sortie.value=pgcd(a,b).toString();
+
+}
+
+</script>
+</body>
+</html>

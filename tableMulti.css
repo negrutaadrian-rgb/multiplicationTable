@@ -1,0 +1,21 @@
+table, th, td {
+   border: 1px solid gray;
+}
+
+td { /* style de css pour les cellules*/
+   width: 50px;
+   text-align:center;
+   padding: 5px;
+}
+
+td.totale { /* le style css pour les cellules qui sont de classe: totale*/
+   background-color: #BA55D3;
+}
+
+td.pair { /* le style css pour les cellules qui sont de classe: pair*/
+   background-color: lightblue;
+}
+
+td.trois { /* le style css pour les cellules qui sont de classe: trois*/
+   background-color: #ffe4e1;
+}
